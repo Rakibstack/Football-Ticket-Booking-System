@@ -34,3 +34,5 @@ CREATE TABLE bookings(
     FOREIGN KEY(match_id)
     REFERENCES matches(match_id)
 );
+
+
