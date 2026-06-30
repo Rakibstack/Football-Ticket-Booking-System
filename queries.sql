@@ -6,7 +6,7 @@
 select match_id,fixture,base_ticket_price 
 from matches
 where tournament_category = 'Champions League'
- and match_status = 'Available'
+and match_status = 'Available';
 
 -- =====================================================
 -- Query 2:
@@ -14,7 +14,7 @@ where tournament_category = 'Champions League'
 -- =====================================================    
 select user_id,full_name,email from users
 where full_name ilike 'Tanvir%' 
-or full_name ilike '%Haque%'
+or full_name ilike '%Haque%';
 
 -- =====================================================
 -- Query 3:
@@ -25,7 +25,7 @@ select booking_id,user_id,match_id ,
 coalesce(payment_status,'Action Required')
 as systematic_status
 from bookings 
-where payment_status is null 
+where payment_status is null ;
 
 -- =====================================================
 -- Query 4:
@@ -36,7 +36,7 @@ where payment_status is null
 select booking_id,full_name,fixture,total_cost
 from bookings
 inner join users using(user_id)
-inner join matches using(match_id)
+inner join matches using(match_id);
 
 -- =====================================================
 -- Query 5:
@@ -45,7 +45,7 @@ inner join matches using(match_id)
 
 select u.user_id,u.full_name,b.booking_id
 from users u
-left join bookings b on u.user_id = b.user_id
+left join bookings b on u.user_id = b.user_id;
 
 -- =====================================================
 -- Query 6:
@@ -54,7 +54,7 @@ left join bookings b on u.user_id = b.user_id
 
 select booking_id,match_id,total_cost
  from bookings
-where total_cost > (select avg(total_cost) from bookings)
+where total_cost > (select avg(total_cost) from bookings);
 
 -- =====================================================
 -- Query 7:
@@ -63,6 +63,6 @@ where total_cost > (select avg(total_cost) from bookings)
 
 select match_id,fixture,base_ticket_price 
 from matches 
-order by base_ticket_price desc limit 2 offset 1
+order by base_ticket_price desc limit 2 offset 1;
 
 

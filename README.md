@@ -76,52 +76,6 @@ Columns:
 * `total_cost`
 
 ---
-
-## 🔗 Database Relationships
-
-### One-to-Many Relationship
-
-One user can create multiple bookings.
-
-```
-Users 1 -------- N Bookings
-```
-
-Example:
-
-A football fan can buy tickets for multiple matches.
-
----
-
-### Many-to-One Relationship
-
-Many bookings belong to one match.
-
-```
-Bookings N -------- 1 Matches
-```
-
-Example:
-
-A popular match can have thousands of ticket bookings.
-
----
-
-## 📊 ERD Diagram
-
-The complete Entity Relationship Diagram includes:
-
-* Primary Keys
-* Foreign Keys
-* Table relationships
-* Cardinality
-
-ERD Tool:
-
-Draw.io
-
----
-
 ## 📁 Project Structure
 
 ```
